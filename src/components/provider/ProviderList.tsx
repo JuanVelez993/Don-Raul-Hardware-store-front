@@ -1,10 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ProviderForm from './ProviderForm';
+import { useAppDispatch } from '../../state/store'
+import { posibleStatus, providerType, selectProvidersFetchError, selectProvidersState, selectProvidersStatus } from '../../state/providerSlice';
+import { getAllProviders } from '../../state/services/providerServices/getAllProviders';
+import { useSelector } from 'react-redux';
 
 
-function ProviderList(
-    
-) {
+
+const ProviderList: React.FunctionComponent = () => {
+
+const dispatch = useAppDispatch();
+
+
+    useEffect(() => {
+        if (status === posibleStatus.IDLE) {
+            dispatch(getAllProviders())
+        }
+    }, [dispatch])
+
+    const error = useSelector(selectProvidersFetchError())
+    const status = useSelector(selectProvidersStatus())
+    const getProviders = useSelector(selectProvidersState()) 
 
     return (<div>
         <table>
@@ -16,19 +32,20 @@ function ProviderList(
                 </tr>
             </thead>
 
-            {/*{portafolio.map((entry) => {
-                return <tbody key={entry.id}>
+           {!error && getProviders.map((provider:providerType) => {
+                return <tbody key={provider.id}>
                     <tr>
-                        <td>{entry.name}</td>
-                        <td><a href={entry.url}>{entry.url}</a></td>
-                        <td>{entry.description}</td>
+                        <td>{provider.name}</td>
+                        <td>{provider.identification}</td>
+                        <td>{provider.phone}</td>
                     </tr>
                 </tbody>
-            })}*/}
+            })}
         </table>
         <ProviderForm />
     </div>)
 
 }
+
 
 export default ProviderList

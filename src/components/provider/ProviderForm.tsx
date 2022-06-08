@@ -22,7 +22,7 @@ function ProviderForm() {
             <div className="form-group row">
                 <label className="col-sm-1 col-form-label">Identification</label>
                 <div className="col-sm-10">
-                    <input type="text" name="identification" id="identificationl" placeholder="Identification" className="form-control mb-4" value={identification} onChange={(e) => setIdentification(e.target.value)} />
+                    <input type="text" name="identification" id="identification" placeholder="Identification" className="form-control mb-4" value={identification} onChange={(e) => setIdentification(e.target.value)} />
                 </div>
             </div>
             <div className="form-group row">

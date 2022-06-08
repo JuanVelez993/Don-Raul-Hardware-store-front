@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import { AppShell, Button, Group, Navbar } from '@mantine/core'
+import { AppShell, Navbar } from '@mantine/core'
 import CustomNavbar from './components/generics/CustomNavBar';
+import ProviderList from './components/provider/ProviderList';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       }
     >
       {/* Your application here */}
+      <ProviderList/>
     </AppShell>
   );
 }
