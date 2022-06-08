@@ -8,6 +8,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mantine/core": "^4.2.8",
+    "@mantine/form": "^4.2.8",
+    "@mantine/hooks": "^4.2.8",
+    "@mantine/next": "^4.2.8",
+    "@mantine/notifications": "^4.2.8",
     "@reduxjs/toolkit": "^1.8.2",
     "@types/uuid": "^8.3.4",
     "firebase": "^9.8.2",
