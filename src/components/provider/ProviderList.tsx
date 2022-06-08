@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import ProviderForm from './ProviderForm';
 import { useAppDispatch } from '../../state/store'
-import { posibleStatus, providerType, selectProvidersFetchError, selectProvidersState, selectProvidersStatus } from '../../state/providerSlice';
+import { requestStatus, providerType, selectProvidersFetchError, selectProvidersState, selectProvidersStatus } from '../../state/providerSlice';
 import { getAllProviders } from '../../state/services/providerServices/getAllProviders';
 import { useSelector } from 'react-redux';
 
@@ -13,7 +13,7 @@ const dispatch = useAppDispatch();
 
 
     useEffect(() => {
-        if (status === posibleStatus.IDLE) {
+        if (status === requestStatus.IDLE) {
             dispatch(getAllProviders())
         }
     }, [dispatch])
