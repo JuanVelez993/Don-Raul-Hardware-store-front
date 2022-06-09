@@ -1,4 +1,5 @@
 import { Button, Group, Navbar } from "@mantine/core";
+import { Link } from "react-router-dom";
 
 function CustomNavbar() {
     return (
@@ -10,13 +11,13 @@ function CustomNavbar() {
         >
             <Navbar.Section>
                 <Button variant='subtle' fullWidth>
-                Providers
+                    <Link to="/providers"> Providers</Link>
                 </Button>
             </Navbar.Section>
 
             <Navbar.Section>
                 <Button variant='subtle' fullWidth>
-                    Products
+                    <Link to="/products"> Products</Link>
                 </Button>
             </Navbar.Section>
 

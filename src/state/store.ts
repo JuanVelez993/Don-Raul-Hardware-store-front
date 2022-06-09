@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 import providerReducer from '../state/providerSlice'
+import productReducer from '../state/productSlices'
 
 
 
 export const store = configureStore({
     reducer: {
-        providers: providerReducer
+        providers: providerReducer,
+        products:productReducer
        
       
     },

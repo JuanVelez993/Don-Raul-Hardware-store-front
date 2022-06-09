@@ -3,9 +3,12 @@ import './App.css'
 import { AppShell, Navbar } from '@mantine/core'
 import CustomNavbar from './components/generics/CustomNavBar';
 import ProviderList from './components/provider/ProviderList';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import ProductList from './components/products/ProductList';
 
 function App() {
   return (
+    <BrowserRouter>
     <AppShell
       navbar={
         <Navbar
@@ -16,10 +19,13 @@ function App() {
           <CustomNavbar />
         </Navbar>
       }
-    >
-      {/* Your application here */}
-      <ProviderList/>
-    </AppShell>
+      ><Routes>
+          <Route path="/providers" element={<ProviderList />}/>
+          <Route path="/products" element={<ProductList />} />
+
+      </Routes>
+      </AppShell>
+    </BrowserRouter>
   );
 }
 

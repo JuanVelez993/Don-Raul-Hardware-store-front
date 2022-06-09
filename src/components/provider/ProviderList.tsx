@@ -4,6 +4,7 @@ import { useAppDispatch } from '../../state/store'
 import { requestStatus, providerType, selectProvidersFetchError, selectProvidersState, selectProvidersStatus } from '../../state/providerSlice';
 import { getAllProviders } from '../../state/services/providerServices/getAllProviders';
 import { useSelector } from 'react-redux';
+import { Table } from '@mantine/core';
 
 
 
@@ -23,7 +24,7 @@ const dispatch = useAppDispatch();
     const getProviders = useSelector(selectProvidersState()) 
 
     return (<div>
-        <table>
+        <Table striped highlightOnHover>
             <thead>
                 <tr>
                     <td>Name:</td>
@@ -41,7 +42,7 @@ const dispatch = useAppDispatch();
                     </tr>
                 </tbody>
             })}
-        </table>
+        </Table>
         <ProviderForm />
     </div>)
 
