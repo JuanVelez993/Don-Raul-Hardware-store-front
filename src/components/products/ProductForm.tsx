@@ -6,6 +6,8 @@ import { productType } from '../../state/productSlice';
 import { providerType, selectProvidersState } from '../../state/providerSlice';
 import { saveProduct } from '../../state/services/productServices/saveProduct';
 import { useAppDispatch } from '../../state/store';
+import { TextInput, Button, NumberInput, Group, Box, Select } from '@mantine/core';
+import { useForm } from '@mantine/form';
 
 
 
@@ -46,8 +48,8 @@ function ProductForm() {
         
     }
     return (
-        <form onSubmit={(e) => handleSubmit(e)}>
-            <div>
+        <form onSubmit={(e) => handleSubmit(e)} >
+            <div >
                 <label >Description</label>
                 <div >
                     <input type="text" name="description" id="description" placeholder="Description"  value={description} onChange={(e) => setDescription(e.target.value)} />
@@ -86,9 +88,9 @@ function ProductForm() {
                 </select>
              </div>
             <div>
-                <button type='submit'>
+                <Button type='submit'>
                     Add Product
-                </button>
+                </Button>
             </div>
         </form>
     )

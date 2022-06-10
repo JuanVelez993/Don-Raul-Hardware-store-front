@@ -11,13 +11,13 @@ function CustomNavbar() {
         >
             <Navbar.Section>
                 <Button variant='subtle' fullWidth>
-                    <Link to="/providers"> Providers</Link>
+                    <Link style={{ textDecoration: 'none' }} to="/providers"> Providers</Link>
                 </Button>
             </Navbar.Section>
 
             <Navbar.Section>
                 <Button variant='subtle' fullWidth>
-                    <Link to="/products"> Products</Link>
+                    <Link style={{ textDecoration: 'none' }} to="/products"> Products</Link>
                 </Button>
             </Navbar.Section>
 

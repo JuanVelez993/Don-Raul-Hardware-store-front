@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
-import { Table } from '@mantine/core';
+import { Button, Table } from '@mantine/core';
 import { useAppDispatch } from '../../state/store'
 import { useSelector } from 'react-redux';
 import { getAllProducts } from '../../state/services/productServices/getAllProducts';
 import { requestStatus, productType, selectProductsFetchError, selectProductsState, selectProductsStatus } from '../../state/productSlice';
 import ProductForm from '../products/ProductForm';
 import { deleteProduct } from '../../state/services/productServices/deleteProduct';
+import { Link } from 'react-router-dom';
 
 
 
@@ -51,12 +52,12 @@ const ProductList: React.FunctionComponent = () => {
                         <td>{product.price}</td>
                         <td>{product.provider.name}</td>
                         <td>{product.provider.phone}</td>
-                        <td><button  >
-                            Edit
-                        </button></td>
-                        <td><button onClick={()=>onDelete(product)}>
+                        <td><Button variant='subtle' color="cyan" fullWidth>
+                            <Link style={{ textDecoration: 'none' }} to="/updateProduct" state={{ myState: product.id}}> Edit</Link>
+                        </Button></td>
+                        <td><Button color="red" onClick={()=>onDelete(product)}>
                             Delete
-                        </button></td>
+                        </Button></td>
                     </tr>
                 </tbody>
             })}

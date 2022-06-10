@@ -4,6 +4,7 @@ import { getAllProducts } from './services/productServices/getAllProducts'
 import { providerType } from "./providerSlice";
 import { saveProduct } from './services/productServices/saveProduct';
 import { deleteProduct } from "./services/productServices/deleteProduct";
+import { updateProduct } from "./services/productServices/updateProduct";
 
 
 
@@ -81,6 +82,22 @@ const productSlice = createSlice({
         builder.addCase(deleteProduct.rejected, (state) => {
             state.status = requestStatus.FAILED
             state.error = "Something went wrong while deleting the product"
+        })
+        //updateProduct
+        builder.addCase(updateProduct.pending, (state) => {
+            state.status = requestStatus.PENDING
+        })
+        builder.addCase(updateProduct.fulfilled, (state, action) => {
+            state.status = requestStatus.COMPLETED
+            //state.products[state.products.indexOf(action.payload)] = action.payload
+            let updatedProduct = state.products.filter(product => product.id=== action.payload.id)[0];
+            let updatedProductPosition = state.products.indexOf(updatedProduct);
+            state.products[updatedProductPosition] = action.payload;
+            
+        })
+        builder.addCase(updateProduct.rejected, (state) => {
+            state.status = requestStatus.FAILED
+            state.error = 'Something went wrong while updating the product'
         })
         
 
