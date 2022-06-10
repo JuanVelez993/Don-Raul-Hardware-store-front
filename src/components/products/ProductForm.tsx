@@ -10,7 +10,7 @@ import { useAppDispatch } from '../../state/store';
 
 
 
-function ProductForm(this: any) {
+function ProductForm() {
     const [description, setDescription] = useState("");
     const [currentInventory, setCurrentInventory] = useState(0);
     const [minInventory, setMinInventory] = useState(0);
@@ -21,8 +21,10 @@ function ProductForm(this: any) {
     const dispatch = useAppDispatch();
     const getProviders = useSelector(selectProvidersState())
     const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        console.log("este es el provider"+getProviders.filter((options) => options.id === event.target.value))
-        setProvider(getProviders.filter((options) => options.id === event.target.value)[0])
+        const value = getProviders.find((options) => options.id === event.target.value)
+        if (value) return setProvider(value)
+        return {}
+        
     }
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -76,10 +78,10 @@ function ProductForm(this: any) {
                 </div>
             </div>
             <div >
-                <label >Select a provider</label>
+                <label >Select a provider:</label>
                 <select onChange={e => handleSelectChange(e)}>
                     {getProviders.map((provider) => (
-                        <option value={provider.id}>{provider.name}</option>
+                        <option  key={provider.id} value={provider.id}>{provider.name}</option>
                     ))}
                 </select>
              </div>

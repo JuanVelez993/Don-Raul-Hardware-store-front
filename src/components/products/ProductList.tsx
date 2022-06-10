@@ -5,12 +5,16 @@ import { useSelector } from 'react-redux';
 import { getAllProducts } from '../../state/services/productServices/getAllProducts';
 import { requestStatus, productType, selectProductsFetchError, selectProductsState, selectProductsStatus } from '../../state/productSlice';
 import ProductForm from '../products/ProductForm';
+import { deleteProduct } from '../../state/services/productServices/deleteProduct';
 
 
 
 const ProductList: React.FunctionComponent = () => {
 
     const dispatch = useAppDispatch();
+    const onDelete = (product: productType) => {
+        dispatch(deleteProduct(product))
+    }
 
 
     useEffect(() => {
@@ -47,10 +51,10 @@ const ProductList: React.FunctionComponent = () => {
                         <td>{product.price}</td>
                         <td>{product.provider.name}</td>
                         <td>{product.provider.phone}</td>
-                        <td><button type='submit' className="btn btn-success mb-4">
+                        <td><button  >
                             Edit
                         </button></td>
-                        <td><button type='submit' className="btn btn-success mb-4">
+                        <td><button onClick={()=>onDelete(product)}>
                             Delete
                         </button></td>
                     </tr>

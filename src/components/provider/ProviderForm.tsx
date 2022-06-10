@@ -27,26 +27,26 @@ function ProviderForm() {
     }
     return (
         <form onSubmit={(e) => handleSubmit(e)}>
-            <div className="form-group row">
-                <label className="col-sm-1 col-form-label">Name</label>
-                <div className="col-sm-10">
-                    <input type="text" name="name" id="name" placeholder="Name" className="form-control mb-4" value={name} onChange={(e) => setName(e.target.value)} />
+            <div >
+                <label >Name</label>
+                <div >
+                    <input type="text" name="name" id="name" placeholder="Name"  value={name} onChange={(e) => setName(e.target.value)} />
                 </div>
             </div>
-            <div className="form-group row">
-                <label className="col-sm-1 col-form-label">Identification</label>
-                <div className="col-sm-10">
-                    <input type="text" name="identification" id="identification" placeholder="Identification" className="form-control mb-4" value={identification} onChange={(e) => setIdentification(e.target.value)} />
+            <div >
+                <label >Identification</label>
+                <div >
+                    <input type="text" name="identification" id="identification" placeholder="Identification" value={identification} onChange={(e) => setIdentification(e.target.value)} />
                 </div>
             </div>
-            <div className="form-group row">
-                <label className="col-sm-1 col-form-label">Phone</label>
-                <div className="col-sm-10">
-                    <input name="phone" id="phone" placeholder="Phone" className="form-control mb-4" value={phone} onChange={(e) => setPhone(e.target.value)} />
+            <div >
+                <label >Phone</label>
+                <div >
+                    <input name="phone" id="phone" placeholder="Phone"  value={phone} onChange={(e) => setPhone(e.target.value)} />
                 </div>
             </div>
             <div>
-                <button type='submit' className="btn btn-success mb-4">
+                <button type='submit' >
                     Add Provider
                 </button>
             </div>

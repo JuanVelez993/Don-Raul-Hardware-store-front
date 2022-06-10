@@ -3,6 +3,7 @@ import { RootState } from './store'
 import { getAllProducts } from './services/productServices/getAllProducts'
 import { providerType } from "./providerSlice";
 import { saveProduct } from './services/productServices/saveProduct';
+import { deleteProduct } from "./services/productServices/deleteProduct";
 
 
 
@@ -66,6 +67,20 @@ const productSlice = createSlice({
         builder.addCase(saveProduct.rejected, (state) => {
             state.status = requestStatus.FAILED
             state.error = 'Something went wrong while creating the product'
+        })
+        //deleteProduct
+        builder.addCase(deleteProduct.pending, (state) => {
+            state.status = requestStatus.PENDING
+        })
+        builder.addCase(deleteProduct.fulfilled, (state, action) => {
+            state.status = requestStatus.COMPLETED
+            if (action.payload.deleted) {
+                state.products = state.products.filter((product) => product.id !== action.payload.productId)
+            }
+        })
+        builder.addCase(deleteProduct.rejected, (state) => {
+            state.status = requestStatus.FAILED
+            state.error = "Something went wrong while deleting the product"
         })
         
 
