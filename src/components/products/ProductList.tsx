@@ -3,7 +3,8 @@ import { Table } from '@mantine/core';
 import { useAppDispatch } from '../../state/store'
 import { useSelector } from 'react-redux';
 import { getAllProducts } from '../../state/services/productServices/getAllProducts';
-import { requestStatus, productType, selectProductsFetchError, selectProductsState, selectProductsStatus } from '../../state/productSlices';
+import { requestStatus, productType, selectProductsFetchError, selectProductsState, selectProductsStatus } from '../../state/productSlice';
+import ProductForm from '../products/ProductForm';
 
 
 
@@ -56,6 +57,7 @@ const ProductList: React.FunctionComponent = () => {
                 </tbody>
             })}
         </Table>
+        <ProductForm/>
         
     </div>)
 

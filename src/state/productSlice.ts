@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from './store'
 import { getAllProducts } from './services/productServices/getAllProducts'
 import { providerType } from "./providerSlice";
+import { saveProduct } from './services/productServices/saveProduct';
 
 
 
@@ -53,6 +54,18 @@ const productSlice = createSlice({
             state.status = requestStatus.FAILED
             state.error = "Something went wrong while fetching the products"
             state.products = []
+        })
+        //saveProduct
+        builder.addCase(saveProduct.pending, (state) => {
+            state.status = requestStatus.PENDING
+        })
+        builder.addCase(saveProduct.fulfilled, (state, action) => {
+            state.status = requestStatus.COMPLETED
+            state.products.push(action.payload)
+        })
+        builder.addCase(saveProduct.rejected, (state) => {
+            state.status = requestStatus.FAILED
+            state.error = 'Something went wrong while creating the product'
         })
         
 
