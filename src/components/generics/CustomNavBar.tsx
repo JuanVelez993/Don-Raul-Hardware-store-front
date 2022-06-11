@@ -40,6 +40,11 @@ function CustomNavbar() {
                 Receipts 
                 </Anchor>
             </Navbar.Section>
+            <Navbar.Section>
+                 <Anchor component={Link} to="/saveBill">
+                    New Bill
+                </Anchor>
+            </Navbar.Section>
         </Group>
         </div>
     )

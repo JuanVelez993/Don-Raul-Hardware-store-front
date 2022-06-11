@@ -12,6 +12,7 @@ import StarterPage from './components/login/StarterPage';
 import { useSelector } from 'react-redux';
 import { RootState } from './state/store';
 import BillList from './components/bill/BillList';
+import BillForms from './components/bill/BillForms';
 
 function App() {
   const { user } = useSelector((state: RootState) => state.auth)
@@ -36,7 +37,8 @@ function App() {
           <Route path="/updateProduct" element={<UpdateProduct/>} />
           <Route path="/receipts" element={<ReceiptList />} />
           <Route path="/saveReceipt" element={<ReceiptForm />} />
-            <Route path="/bills" element={<BillList />} />
+          <Route path="/bills" element={<BillList />} />
+          <Route path="/saveBill" element={<BillForms />} />
 
       </Routes>
       </AppShell>}

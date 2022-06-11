@@ -7,6 +7,7 @@ import { requestStatus, productType, selectProductsFetchError, selectProductsSta
 import ProductForm from '../products/ProductForm';
 import { deleteProduct } from '../../state/services/productServices/deleteProduct';
 import { Link } from 'react-router-dom';
+import { addPost, addProduct } from '../../state/slices/shoppingslice';
 
 
 
@@ -15,6 +16,10 @@ const ProductList: React.FunctionComponent = () => {
     const dispatch = useAppDispatch();
     const onDelete = (product: productType) => {
         dispatch(deleteProduct(product))
+    }
+    const onAdd = (product: productType)=>{
+        dispatch(addPost(product))
+
     }
 
 
@@ -40,6 +45,7 @@ const ProductList: React.FunctionComponent = () => {
                     <td>Purchase</td>
                     <td>Edit</td>
                     <td>Delete</td>
+                    <td>Add:</td>
                     
 
                 </tr>
@@ -62,6 +68,10 @@ const ProductList: React.FunctionComponent = () => {
                         <td><Button color="red" onClick={()=>onDelete(product)}>
                             X
                         </Button></td>
+                        <td><Button color="red" onClick={()=>onAdd(product)}>
+                            Add
+                        </Button></td>
+                        
                     </tr>
                 </tbody>
             })}
@@ -74,3 +84,5 @@ const ProductList: React.FunctionComponent = () => {
 
 
 export default ProductList
+
+
