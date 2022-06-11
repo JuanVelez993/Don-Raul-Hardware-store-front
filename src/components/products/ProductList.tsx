@@ -37,6 +37,7 @@ const ProductList: React.FunctionComponent = () => {
                     <td>Price:</td>
                     <td>Provider:</td>
                     <td>Provider Phone:</td>
+                    <td>Purchase</td>
                     <td>Edit</td>
                     <td>Delete</td>
                     
@@ -53,10 +54,13 @@ const ProductList: React.FunctionComponent = () => {
                         <td>{product.provider.name}</td>
                         <td>{product.provider.phone}</td>
                         <td><Button variant='subtle' color="cyan" fullWidth>
+                            <Link style={{ textDecoration: 'none' }} to="/saveReceipt" state={{ myState: product.id }}> Purchase</Link>
+                        </Button></td>
+                        <td><Button variant='subtle' color="cyan" fullWidth>
                             <Link style={{ textDecoration: 'none' }} to="/updateProduct" state={{ myState: product.id}}> Edit</Link>
                         </Button></td>
                         <td><Button color="red" onClick={()=>onDelete(product)}>
-                            Delete
+                            X
                         </Button></td>
                     </tr>
                 </tbody>

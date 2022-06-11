@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from '../state/store'
 import { providerType } from "./providerSlice";
 import { getAllReceipts } from "./services/receiptServices/getAllReceipts";
+import { saveReceipt } from "./services/receiptServices/saveReceipt";
 
 
 export enum requestStatus {
@@ -50,8 +51,20 @@ const receiptSlice = createSlice({
         })
         builder.addCase(getAllReceipts.rejected, (state, action) => {
             state.status = requestStatus.FAILED
-            state.error = "Something went wrong while fetching the providers"
+            state.error = "Something went wrong while fetching the receipts"
             state.receipts = []
+        })
+        //saveReceipt
+        builder.addCase(saveReceipt.pending, (state) => {
+            state.status = requestStatus.PENDING
+        })
+        builder.addCase(saveReceipt.fulfilled, (state, action) => {
+            state.status = requestStatus.COMPLETED
+            state.receipts.push(action.payload)
+        })
+        builder.addCase(saveReceipt.rejected, (state) => {
+            state.status = requestStatus.FAILED
+            state.error = 'Something went wrong while creating the receipt'
         })
         
     }

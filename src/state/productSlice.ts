@@ -89,7 +89,6 @@ const productSlice = createSlice({
         })
         builder.addCase(updateProduct.fulfilled, (state, action) => {
             state.status = requestStatus.COMPLETED
-            //state.products[state.products.indexOf(action.payload)] = action.payload
             let updatedProduct = state.products.filter(product => product.id=== action.payload.id)[0];
             let updatedProductPosition = state.products.indexOf(updatedProduct);
             state.products[updatedProductPosition] = action.payload;

@@ -6,7 +6,7 @@ import { productType, selectProductsState } from '../../state/productSlice';
 import { providerType} from '../../state/providerSlice';
 import { updateProduct } from '../../state/services/productServices/updateProduct';
 import { useAppDispatch } from '../../state/store';
-import { useLocation } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 
 
 interface CustomizedState {
@@ -17,6 +17,7 @@ interface CustomizedState {
 
 const UpdateProduct: React.FunctionComponent = () => {
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
     const location = useLocation();
     const state = location.state as CustomizedState;
     const { myState } = state
@@ -40,6 +41,7 @@ const UpdateProduct: React.FunctionComponent = () => {
                 price: price, provider: provider
             }
             dispatch(updateProduct(updatedProduct))
+            navigate("/products")
            
 
         }
