@@ -2,8 +2,8 @@ import { Button } from '@mantine/core';
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import '../../App.css'
-import { productType, selectProductsState } from '../../state/productSlice';
-import { providerType} from '../../state/providerSlice';
+import { productType, selectProductsState } from '../../state/slices/productSlice';
+import { providerType} from '../../state/slices/providerSlice';
 import { updateProduct } from '../../state/services/productServices/updateProduct';
 import { useAppDispatch } from '../../state/store';
 import { useLocation, useNavigate } from "react-router-dom"

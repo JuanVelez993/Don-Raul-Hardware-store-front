@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from '../state/store'
+import { RootState } from '../store'
 import { providerType } from "./providerSlice";
-import { getAllReceipts } from "./services/receiptServices/getAllReceipts";
-import { saveReceipt } from "./services/receiptServices/saveReceipt";
+import { getAllReceipts } from "../services/receiptServices/getAllReceipts";
+import { saveReceipt } from "../services/receiptServices/saveReceipt";
 
 
 export enum requestStatus {

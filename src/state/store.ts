@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
-import providerReducer from '../state/providerSlice'
-import productReducer from './productSlice'
-import receiptReducer from './receiptSlice'
+import providerReducer from './slices/providerSlice'
+import productReducer from './slices/productSlice'
+import receiptReducer from './slices/receiptSlice'
 
 
 

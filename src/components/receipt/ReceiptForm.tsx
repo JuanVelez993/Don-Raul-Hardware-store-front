@@ -2,15 +2,15 @@ import { nanoid } from '@reduxjs/toolkit';
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import '../../App.css'
-import { productType, selectProductsState } from '../../state/productSlice';
-import { providerType, selectProvidersState } from '../../state/providerSlice';
+import { productType, selectProductsState } from '../../state/slices/productSlice';
+import { providerType, selectProvidersState } from '../../state/slices/providerSlice';
 import { useAppDispatch } from '../../state/store';
 import { Button,Alert} from '@mantine/core';
 import { AlertCircle } from 'tabler-icons-react';
 import { saveReceipt } from '../../state/services/receiptServices/saveReceipt';
 import { useLocation, useNavigate } from 'react-router-dom';
 import moment from 'moment';
-import { receiptType } from '../../state/receiptSlice';
+import { receiptType } from '../../state/slices/receiptSlice';
 import { updateProduct } from '../../state/services/productServices/updateProduct';
 
 interface CustomizedState {

@@ -2,12 +2,11 @@ import { nanoid } from '@reduxjs/toolkit';
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import '../../App.css'
-import { productType } from '../../state/productSlice';
-import { providerType, selectProvidersState } from '../../state/providerSlice';
+import { productType } from '../../state/slices/productSlice';
+import { providerType, selectProvidersState } from '../../state/slices/providerSlice';
 import { saveProduct } from '../../state/services/productServices/saveProduct';
 import { useAppDispatch } from '../../state/store';
-import { TextInput, Button, NumberInput, Group, Box, Select } from '@mantine/core';
-import { useForm } from '@mantine/form';
+import {  Button,  } from '@mantine/core';
 
 
 

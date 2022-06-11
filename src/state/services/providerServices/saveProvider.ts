@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { providerType } from "../../providerSlice";
+import { providerType } from "../../slices/providerSlice";
 import { providerUrls } from "./providerUrls";
 
 export const saveProvider = createAsyncThunk('provider/save', async (provider:providerType) => {

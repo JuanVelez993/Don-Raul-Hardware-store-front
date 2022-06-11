@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { productType } from "../../productSlice";
+import { productType } from "../../slices/productSlice";
 import { productUrls } from "./productUrls";
 
 export const getAllProducts = createAsyncThunk('getAllProducts', async () => {
