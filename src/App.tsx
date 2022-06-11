@@ -6,6 +6,7 @@ import ProviderList from './components/provider/ProviderList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import ProductList from './components/products/ProductList';
 import UpdateProduct from './components/products/UpdateProduct';
+import ReceiptList from './components/receipt/ReceiptList';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/providers" element={<ProviderList />}/>
           <Route path="/products" element={<ProductList />} />
           <Route path="/updateProduct" element={<UpdateProduct/>} />
+          <Route path="/receipts" element={<ReceiptList />} />
 
       </Routes>
       </AppShell>

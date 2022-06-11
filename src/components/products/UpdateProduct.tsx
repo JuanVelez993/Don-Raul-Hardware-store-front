@@ -1,6 +1,5 @@
 import { Button } from '@mantine/core';
-import { nanoid } from '@reduxjs/toolkit';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import '../../App.css'
 import { productType, selectProductsState } from '../../state/productSlice';
@@ -20,7 +19,7 @@ const UpdateProduct: React.FunctionComponent = () => {
     const dispatch = useAppDispatch();
     const location = useLocation();
     const state = location.state as CustomizedState;
-    const { myState } = state;
+    const { myState } = state
     const getProducts = useSelector(selectProductsState())
     const toUpdate = getProducts.find((options) => options.id === myState) as productType
     const [id, setId]= useState(toUpdate.id)

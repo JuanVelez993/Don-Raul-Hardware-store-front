@@ -28,7 +28,7 @@ function CustomNavbar() {
             </Navbar.Section>
             <Navbar.Section>
                 <Button variant='subtle' fullWidth>
-                    Receipts
+                    <Link style={{ textDecoration: 'none' }} to="/receipts"> Receipts</Link> 
                 </Button>
             </Navbar.Section>
         </Group>
