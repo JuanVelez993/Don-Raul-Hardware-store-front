@@ -4,6 +4,7 @@ import '../../App.css'
 import { providerType } from '../../state/slices/providerSlice';
 import { saveProvider } from '../../state/services/providerServices/saveProvider';
 import { useAppDispatch } from '../../state/store';
+import { Button } from '@mantine/core';
 
 
 
@@ -46,9 +47,9 @@ function ProviderForm() {
                 </div>
             </div>
             <div>
-                <button type='submit' >
+                <Button type='submit' >
                     Add Provider
-                </button>
+                </Button>
             </div>
         </form>
     )

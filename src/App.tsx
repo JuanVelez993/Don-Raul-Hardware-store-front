@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import { AppShell, Button, Navbar } from '@mantine/core'
+import { AppShell, Button, Navbar, Title } from '@mantine/core'
 import CustomNavbar from './components/generics/CustomNavBar';
 import ProviderList from './components/provider/ProviderList';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
@@ -11,6 +11,7 @@ import ReceiptForm from './components/receipt/ReceiptForm';
 import StarterPage from './components/login/StarterPage';
 import { useSelector } from 'react-redux';
 import { RootState } from './state/store';
+import BillList from './components/bill/BillList';
 
 function App() {
   const { user } = useSelector((state: RootState) => state.auth)
@@ -22,11 +23,9 @@ function App() {
     <AppShell
       navbar={
         <Navbar
-          width={{ base: 300 }}
-          height='100vh'
+         width={{ base: 280 }} height={700}
         >
-          <h1>Don Raul Store</h1>
-          <CustomNavbar />
+        <CustomNavbar />
         </Navbar>
       }
       >
@@ -37,6 +36,7 @@ function App() {
           <Route path="/updateProduct" element={<UpdateProduct/>} />
           <Route path="/receipts" element={<ReceiptList />} />
           <Route path="/saveReceipt" element={<ReceiptForm />} />
+            <Route path="/bills" element={<BillList />} />
 
       </Routes>
       </AppShell>}

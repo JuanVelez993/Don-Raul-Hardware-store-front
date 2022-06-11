@@ -10,8 +10,8 @@ type billType = {
     date: string,
     client: string,
     clerk: number,
-    product: productType[],
-    totalPaid: number,
+    products: productType[],
+    total: number,
 }
 
 interface billStateType {
