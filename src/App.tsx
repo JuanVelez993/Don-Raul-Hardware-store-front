@@ -1,17 +1,24 @@
 import { useState } from 'react'
 import './App.css'
-import { AppShell, Navbar } from '@mantine/core'
+import { AppShell, Button, Navbar } from '@mantine/core'
 import CustomNavbar from './components/generics/CustomNavBar';
 import ProviderList from './components/provider/ProviderList';
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import ProductList from './components/products/ProductList';
 import UpdateProduct from './components/products/UpdateProduct';
 import ReceiptList from './components/receipt/ReceiptList';
 import ReceiptForm from './components/receipt/ReceiptForm';
+import StarterPage from './components/login/StarterPage';
+import { useSelector } from 'react-redux';
+import { RootState } from './state/store';
 
 function App() {
+  const { user } = useSelector((state: RootState) => state.auth)
   return (
     <BrowserRouter>
+      {user == null ?
+        <StarterPage />
+      :
     <AppShell
       navbar={
         <Navbar
@@ -22,7 +29,9 @@ function App() {
           <CustomNavbar />
         </Navbar>
       }
-      ><Routes>
+      >
+      <Routes>
+          <Route path="/" element={<StarterPage />} />
           <Route path="/providers" element={<ProviderList />}/>
           <Route path="/products" element={<ProductList />} />
           <Route path="/updateProduct" element={<UpdateProduct/>} />
@@ -30,7 +39,7 @@ function App() {
           <Route path="/saveReceipt" element={<ReceiptForm />} />
 
       </Routes>
-      </AppShell>
+      </AppShell>}
     </BrowserRouter>
   );
 }
