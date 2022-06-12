@@ -58,7 +58,7 @@ const BillForms: React.FunctionComponent<IAppProps> = (props) => {
     
 
   return(
-      <form onSubmit={(e) => handleSubmit(e)} >
+      <form onSubmit={(e) => handleSubmit(e)} className="form" >
           <div >
               <label >Client:</label>
               <div >

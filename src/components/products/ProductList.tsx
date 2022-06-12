@@ -76,6 +76,7 @@ const ProductList: React.FunctionComponent = () => {
                 </tbody>
             })}
         </Table>
+        <br/>
         <ProductForm/>
         
     </div>)

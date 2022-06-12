@@ -27,7 +27,7 @@ function ProviderForm() {
         }
     }
     return (
-        <form onSubmit={(e) => handleSubmit(e)}>
+        <form onSubmit={(e) => handleSubmit(e)} className="form">
             <div >
                 <label >Name:</label>
                 <div >

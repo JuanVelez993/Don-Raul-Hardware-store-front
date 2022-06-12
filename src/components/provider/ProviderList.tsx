@@ -43,6 +43,7 @@ const dispatch = useAppDispatch();
                 </tbody>
             })}
         </Table>
+        <br />
         <ProviderForm />
     </div>)
 

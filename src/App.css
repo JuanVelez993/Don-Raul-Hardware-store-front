@@ -73,3 +73,12 @@ button {
     padding: 70px;
     margin: 70px;
 }
+
+.form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #191d19;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
