@@ -1,5 +1,5 @@
 export enum receiptUrls {
-    GetAllReceipts = 'http://localhost:8084/all/receipts',
-    SaveReceipt = 'http://localhost:8084/save/receipt',
+    GetAllReceipts = 'https://donraulstorejv-993.herokuapp.com/all/receipts',
+    SaveReceipt = 'https://donraulstorejv-993.herokuapp.com/save/receipt',
 
 }

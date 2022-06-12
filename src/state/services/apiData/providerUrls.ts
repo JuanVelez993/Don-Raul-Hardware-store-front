@@ -1,5 +1,5 @@
 export enum providerUrls {
-    GetAll = 'http://localhost:8084/all/providers',
-    SaveProvider = 'http://localhost:8084/save/provider',
+    GetAll = 'https://donraulstorejv-993.herokuapp.com/all/providers',
+    SaveProvider = 'https://donraulstorejv-993.herokuapp.com/save/provider',
     
 }

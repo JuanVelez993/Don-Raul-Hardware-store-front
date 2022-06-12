@@ -1,5 +1,5 @@
 export enum billUrls {
-    GetAllBills = 'http://localhost:8084/all/bills',
-    SaveBill = 'http://localhost:8084/save/bill',
+    GetAllBills = 'https://donraulstorejv-993.herokuapp.com/all/bills',
+    SaveBill = 'https://donraulstorejv-993.herokuapp.com/save/bill',
 
 }

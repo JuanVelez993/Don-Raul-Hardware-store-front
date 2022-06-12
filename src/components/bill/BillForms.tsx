@@ -9,6 +9,7 @@ import { billType } from '../../state/slices/billSlice';
 import { nanoid } from '@reduxjs/toolkit';
 import { saveBill } from '../../state/services/billActions/saveBill';
 import { clearShoppingCart } from '../../state/slices/shoppingCartSlice';
+import { useNavigate } from 'react-router-dom';
 
 interface IAppProps {
 }
@@ -16,10 +17,11 @@ interface IAppProps {
 const BillForms: React.FunctionComponent<IAppProps> = (props) => {
 
     const dispatch = useAppDispatch();
+    const navigate = useNavigate()
     const [client, setClient] = useState("");
     const [clerk, setClerk] = useState("");
     const { products } = useSelector((state: RootState)=> state.shopping);
-    console.log("estos son los productos del cart",products)
+    
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -47,6 +49,7 @@ const BillForms: React.FunctionComponent<IAppProps> = (props) => {
             dispatch(updateProduct(productUpdated))
         })
         dispatch(clearShoppingCart())
+        navigate("/bills")
         
     }
 

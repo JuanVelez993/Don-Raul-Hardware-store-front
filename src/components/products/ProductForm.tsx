@@ -86,6 +86,7 @@ function ProductForm() {
             <div >
                 <label >Select a provider:</label>
                 <select onChange={e => handleSelectChange(e)}>
+                    <option disabled selected> Choose a provider </option>
                     {getProviders.map((provider) => (
                         <option  key={provider.id} value={provider.id}>{provider.name}</option>
                     ))}
