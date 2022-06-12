@@ -7,7 +7,7 @@ import { requestStatus, productType, selectProductsFetchError, selectProductsSta
 import ProductForm from '../products/ProductForm';
 import { deleteProduct } from '../../state/services/productServices/deleteProduct';
 import { Link } from 'react-router-dom';
-import { addProduct} from '../../state/slices/shoppingslice';
+import { addProduct} from '../../state/slices/shoppingCartSlice';
 
 
 

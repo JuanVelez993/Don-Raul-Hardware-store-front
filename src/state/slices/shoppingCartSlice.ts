@@ -4,8 +4,7 @@ import { shoppingCartType } from "./productSlice"
 
 interface shoppingStateType {
     products: shoppingCartType[],
-    //products: productType[],
-    
+        
 }
 
 const initialState: shoppingStateType = {

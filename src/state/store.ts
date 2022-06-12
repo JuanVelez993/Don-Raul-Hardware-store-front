@@ -5,7 +5,7 @@ import productReducer from './slices/productSlice'
 import receiptReducer from './slices/receiptSlice'
 import billReducer from './slices/billSlice'
 import authReducer from "./slices/authSlice";
-import shopping from './slices/shoppingslice'
+import shopping from './slices/shoppingCartSlice'
 
 
 

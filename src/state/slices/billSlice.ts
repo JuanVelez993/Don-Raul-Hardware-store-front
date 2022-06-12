@@ -3,13 +3,14 @@ import { RootState } from '../../state/store'
 import {  requestStatus } from './providerSlice'
 import { getAllBills } from '../../state/services/billServices/getAllBills'
 import { productType } from "./productSlice";
+import { saveBill } from "../services/billServices/saveBill";
 
 
 type billType = {
     id: string,
     date: string,
     client: string,
-    clerk: number,
+    clerk: string,
     products: productType[],
     total: number,
 }
@@ -45,6 +46,18 @@ const billSlice = createSlice({
             state.status = requestStatus.FAILED
             state.error = "Something went wrong while fetching the bills"
             state.bills = []
+        })
+        //saveBill
+        builder.addCase(saveBill.pending, (state) => {
+            state.status = requestStatus.PENDING
+        })
+        builder.addCase(saveBill.fulfilled, (state, action) => {
+            state.status = requestStatus.COMPLETED
+            state.bills.push(action.payload)
+        })
+        builder.addCase(saveBill.rejected, (state) => {
+            state.status = requestStatus.FAILED
+            state.error = 'Something went wrong while creating the bill'
         })
     }
 })
