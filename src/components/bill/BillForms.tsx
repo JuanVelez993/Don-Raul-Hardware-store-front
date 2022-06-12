@@ -1,7 +1,7 @@
 import  React, { useEffect,useState }from 'react';
 import { RootState, useAppDispatch } from '../../state/store';
 import { useDispatch, useSelector } from 'react-redux'
-import { Button } from '@mantine/core';
+import { Button, Table } from '@mantine/core';
 import { productType } from '../../state/slices/productSlice';
 import { updateProduct } from '../../state/services/productServices/updateProduct';
 import moment from 'moment';
@@ -71,9 +71,27 @@ const BillForms: React.FunctionComponent<IAppProps> = (props) => {
           </div>
           <br />
           <div >
-              <label >Provider:</label>
+              <Table striped highlightOnHover horizontalSpacing="md" verticalSpacing="sm" fontSize="md">
+                  <thead>
+                      <tr>
+                          <td>Product:</td>
+                          <td>Price:</td>
+                          <td>Quantity:</td>
+                          
+                      </tr>
+                  </thead>{products.map(shoppingProduct=> {
+                  return <tr>
+                        <td>{shoppingProduct.product.description}</td>
+                        <td> {shoppingProduct.product.price}</td>
+                        <td>{shoppingProduct.quantity}</td>
+                        </tr>
+              })}</Table>
+          </div>
+          <br />
+          <div >
+              <label >Total Price:</label>
               <div >
-                 
+                  <input disabled type='number' value={products.reduce((aum, product) => product.product.price + aum, 0)} />
               </div>
           </div>
           <br />

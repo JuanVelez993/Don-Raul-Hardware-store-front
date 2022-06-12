@@ -68,7 +68,7 @@ const ProductList: React.FunctionComponent = () => {
                         <td><Button color="red" onClick={()=>onDelete(product)}>
                             X
                         </Button></td>
-                        <td><Button color="red" onClick={()=>onAdd(product)}>
+                        <td><Button color="teal" onClick={()=>onAdd(product)}>
                             Add to cart
                         </Button></td>
                         

@@ -83,7 +83,7 @@ function ReceiptForm() {
             <div >
                 <label >Units:</label>
                 <div >
-                    <input type='number' name="units" id="units" value={units} onChange={(e) => setUnits(Number(e.target.value))} />
+                    <input type='number' name="units" id="units" min='0' value={units} onChange={(e) => setUnits(Number(e.target.value))} />
                 </div>
             </div>
             <br />

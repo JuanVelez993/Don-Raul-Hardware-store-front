@@ -57,25 +57,25 @@ function ProductForm() {
             <div >
                 <label >Current Units</label>
                 <div >
-                    <input type='number' name="currentInventory" id="currentInventory" placeholder="Current Units" value={currentInventory} onChange={(e) => setCurrentInventory(Number(e.target.value))} />
+                    <input type='number' name="currentInventory" id="currentInventory" min='0' value={currentInventory} onChange={(e) => setCurrentInventory(Number(e.target.value))} />
                 </div>
             </div>
             <div >
                 <label >Minimum Units</label>
                 <div >
-                    <input type='number' name="minInventory" id="minInventory" placeholder="Minimum Units" value={minInventory} onChange={(e) => setMinInventory(Number(e.target.value))} />
+                    <input type='number' name="minInventory" id="minInventory" min='0' value={minInventory} onChange={(e) => setMinInventory(Number(e.target.value))} />
                 </div>
             </div>
             <div >
                 <label >Maximum Units</label>
                 <div >
-                    <input type='number' name="maxInventory" id="maxInventory" placeholder="Maximum Units" value={maxInventory} onChange={(e) => setMaxInventory(Number(e.target.value))} />
+                    <input type='number' name="maxInventory" id="maxInventory" min='0' value={maxInventory} onChange={(e) => setMaxInventory(Number(e.target.value))} />
                 </div>
             </div>
             <div >
                 <label >Price</label>
                 <div >
-                    <input type='number' name="price" id="price" placeholder="Price" value={price} onChange={(e) => setPrice(Number(e.target.value))} />
+                    <input type='number' name="price" id="price" min='0' value={price} onChange={(e) => setPrice(Number(e.target.value))} />
                 </div>
             </div>
             <div >
