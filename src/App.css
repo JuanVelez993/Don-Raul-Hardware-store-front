@@ -47,3 +47,29 @@ button {
     align-items: center;
     justify-content: center
 }
+
+.options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 70px;
+    border: 1px solid #4CAF50;
+    margin: 70px;
+}
+
+.optiong {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 70px;
+    margin: 70px;
+}

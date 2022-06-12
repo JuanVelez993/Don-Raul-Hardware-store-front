@@ -49,7 +49,7 @@ const LogIn: React.FunctionComponent = () => {
 
     return (
         <div>
-            <h1>Log In:</h1>
+            <h1 style={{ color: "#4CAF50" }}>Log In:</h1>
             <form >
                 <div >
                     <label htmlFor="username">Email:</label><br />
@@ -69,6 +69,7 @@ const LogIn: React.FunctionComponent = () => {
                         value={password}
                     /><br />
                 </div>
+                <br/>
                 <Button variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }} onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => logInForm(e)}>Log In</Button><br />
             </form>
         </div>

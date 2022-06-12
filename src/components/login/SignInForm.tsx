@@ -57,7 +57,7 @@ const SignInForm = () => {
 
     return (
         <div>
-            <h1>Sign In</h1>
+            <h1 style={{ color: "#4CAF50" }}>Sign In</h1>
             <form>
                 <label htmlFor="username">Email:</label><br />
                 <input
@@ -73,6 +73,7 @@ const SignInForm = () => {
                     name="password"
                     value={password}
                 /><br />
+                <br/>
                 <Button color="green" onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => signInForm(e)}>Sign in</Button><br />
             </form>
         </div>
