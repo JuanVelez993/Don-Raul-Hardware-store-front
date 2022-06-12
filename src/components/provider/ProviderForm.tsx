@@ -29,23 +29,26 @@ function ProviderForm() {
     return (
         <form onSubmit={(e) => handleSubmit(e)}>
             <div >
-                <label >Name</label>
+                <label >Name:</label>
                 <div >
                     <input type="text" name="name" id="name" placeholder="Name"  value={name} onChange={(e) => setName(e.target.value)} />
                 </div>
             </div>
+            <br />
             <div >
-                <label >Identification</label>
+                <label >Identification:</label>
                 <div >
                     <input type="text" name="identification" id="identification" placeholder="Identification" value={identification} onChange={(e) => setIdentification(e.target.value)} />
                 </div>
             </div>
+            <br />
             <div >
-                <label >Phone</label>
+                <label >Phone:</label>
                 <div >
                     <input name="phone" id="phone" placeholder="Phone"  value={phone} onChange={(e) => setPhone(e.target.value)} />
                 </div>
             </div>
+            <br/>
             <div>
                 <Button type='submit' >
                     Add Provider

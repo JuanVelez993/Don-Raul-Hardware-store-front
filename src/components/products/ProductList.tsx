@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Button, Table } from '@mantine/core';
+import { Anchor, Button, Table } from '@mantine/core';
 import { useAppDispatch } from '../../state/store'
 import { useSelector } from 'react-redux';
 import { getAllProducts } from '../../state/services/productServices/getAllProducts';
@@ -59,9 +59,9 @@ const ProductList: React.FunctionComponent = () => {
                         <td>{product.price}</td>
                         <td>{product.provider.name}</td>
                         <td>{product.provider.phone}</td>
-                        <td><Button variant='subtle' color="cyan" fullWidth>
-                            <Link style={{ textDecoration: 'none' }} to="/saveReceipt" state={{ myState: product.id }}> Purchase</Link>
-                        </Button></td>
+                        <td><Anchor component={Link} to="/saveReceipt" state={{ myState: product.id }}>
+                              Purchase
+                        </Anchor></td>
                         <td><Button variant='subtle' color="cyan" fullWidth>
                             <Link style={{ textDecoration: 'none' }} to="/updateProduct" state={{ myState: product.id}}> Edit</Link>
                         </Button></td>

@@ -5,7 +5,7 @@ const StarterPage: React.FunctionComponent = () => {
 
 
     return (
-        <div >
+        <div className="start" >
             <h1>Please login before accessing the store.</h1>
             <LoginForm />
         </div>

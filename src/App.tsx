@@ -24,7 +24,7 @@ function App() {
     <AppShell
       navbar={
         <Navbar
-         width={{ base: 280 }} height={700}
+         width={{ base: 280 }} height={900}
         >
         <CustomNavbar />
         </Navbar>

@@ -49,35 +49,40 @@ function ProductForm() {
     return (
         <form onSubmit={(e) => handleSubmit(e)} >
             <div >
-                <label >Description</label>
+                <label >Description:</label>
                 <div >
                     <input type="text" name="description" id="description" placeholder="Description"  value={description} onChange={(e) => setDescription(e.target.value)} />
                 </div>
             </div>
+            <br />
             <div >
-                <label >Current Units</label>
+                <label >Current Units:</label>
                 <div >
                     <input type='number' name="currentInventory" id="currentInventory" min='0' value={currentInventory} onChange={(e) => setCurrentInventory(Number(e.target.value))} />
                 </div>
             </div>
+            <br />
             <div >
-                <label >Minimum Units</label>
+                <label >Minimum Units:</label>
                 <div >
                     <input type='number' name="minInventory" id="minInventory" min='0' value={minInventory} onChange={(e) => setMinInventory(Number(e.target.value))} />
                 </div>
             </div>
+            <br />
             <div >
-                <label >Maximum Units</label>
+                <label >Maximum Units:</label>
                 <div >
                     <input type='number' name="maxInventory" id="maxInventory" min='0' value={maxInventory} onChange={(e) => setMaxInventory(Number(e.target.value))} />
                 </div>
             </div>
+            <br />
             <div >
-                <label >Price</label>
+                <label >Price:</label>
                 <div >
                     <input type='number' name="price" id="price" min='0' value={price} onChange={(e) => setPrice(Number(e.target.value))} />
                 </div>
             </div>
+            <br />
             <div >
                 <label >Select a provider:</label>
                 <select onChange={e => handleSelectChange(e)}>
@@ -86,6 +91,7 @@ function ProductForm() {
                     ))}
                 </select>
              </div>
+            <br />
             <div>
                 <Button type='submit'>
                     Add Product
