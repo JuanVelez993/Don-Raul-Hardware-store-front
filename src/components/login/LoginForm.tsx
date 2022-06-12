@@ -28,7 +28,7 @@ const LoginForm: React.FunctionComponent = () => {
             .then((result) => {
                 const credential: OAuthCredential | null = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential!.accessToken;
-                const user = result.user;
+                const user = result.user.email;
 
                 dispatch(loginReducer(user))
 
@@ -37,9 +37,7 @@ const LoginForm: React.FunctionComponent = () => {
             }).catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-
                 const email = error.email;
-
                 const credential = GoogleAuthProvider.credentialFromError(error);
             })
     }

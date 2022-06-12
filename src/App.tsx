@@ -13,6 +13,8 @@ import { useSelector } from 'react-redux';
 import { RootState } from './state/store';
 import BillList from './components/bill/BillList';
 import BillForms from './components/bill/BillForms';
+import SignInForm from './components/login/SignInForm';
+import LoginEmail from './components/login/LoginEmail';
 
 function App() {
   const { user } = useSelector((state: RootState) => state.auth)
@@ -39,6 +41,8 @@ function App() {
           <Route path="/saveReceipt" element={<ReceiptForm />} />
           <Route path="/bills" element={<BillList />} />
           <Route path="/saveBill" element={<BillForms />} />
+          <Route path="/signIn" element={<SignInForm />} />
+            <Route path="/LoginEmail" element={<LoginEmail />} />
 
       </Routes>
       </AppShell>}
