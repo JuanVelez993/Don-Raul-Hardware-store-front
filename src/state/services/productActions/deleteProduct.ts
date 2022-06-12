@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { productType } from '../../slices/productSlice'
-import { productUrls } from "./productUrls";
+import { productUrls } from "../apiData/productUrls";
 
 
 export const deleteProduct = createAsyncThunk('deleteProduct', async (product: productType) => {

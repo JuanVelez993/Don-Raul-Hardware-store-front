@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import '../../App.css'
 import { productType } from '../../state/slices/productSlice';
 import { providerType, selectProvidersState } from '../../state/slices/providerSlice';
-import { saveProduct } from '../../state/services/productServices/saveProduct';
+import { saveProduct } from '../../state/services/productActions/saveProduct';
 import { useAppDispatch } from '../../state/store';
 import {  Button,  } from '@mantine/core';
 

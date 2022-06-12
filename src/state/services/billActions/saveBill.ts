@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { billType } from "../../slices/billSlice";
-import { billUrls } from "./billUrls";
+import { billUrls } from "../apiData/billUrls";
 
 
 export const saveBill = createAsyncThunk('saveBill', async (product: billType) => {

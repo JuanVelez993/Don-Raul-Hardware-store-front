@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { receiptType } from "../../slices/receiptSlice";
-import { receiptUrls } from './receiptUrls';
+import { receiptUrls } from '../apiData/receiptUrls';
 
 
 

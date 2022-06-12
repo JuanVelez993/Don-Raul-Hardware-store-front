@@ -3,11 +3,11 @@ import { RootState, useAppDispatch } from '../../state/store';
 import { useDispatch, useSelector } from 'react-redux'
 import { Button, Table } from '@mantine/core';
 import { productType } from '../../state/slices/productSlice';
-import { updateProduct } from '../../state/services/productServices/updateProduct';
+import { updateProduct } from '../../state/services/productActions/updateProduct';
 import moment from 'moment';
 import { billType } from '../../state/slices/billSlice';
 import { nanoid } from '@reduxjs/toolkit';
-import { saveBill } from '../../state/services/billServices/saveBill';
+import { saveBill } from '../../state/services/billActions/saveBill';
 import { clearShoppingCart } from '../../state/slices/shoppingCartSlice';
 
 interface IAppProps {

@@ -1,12 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { productType } from "../../slices/productSlice";
-import { productUrls } from './productUrls';
+import { productUrls } from '../apiData/productUrls';
 
 
 
-export const updateProduct = createAsyncThunk('updateProduct', async (product: productType) => {
-    const response = await fetch(productUrls.UpdateProduct, {
-        method: 'PUT',
+export const saveProduct = createAsyncThunk('saveProduct', async (product: productType) => {
+    const response = await fetch(productUrls.SaveProduct, {
+        method: 'POST',
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
         },

@@ -7,11 +7,11 @@ import { providerType, selectProvidersState } from '../../state/slices/providerS
 import { useAppDispatch } from '../../state/store';
 import { Button,Alert} from '@mantine/core';
 import { AlertCircle } from 'tabler-icons-react';
-import { saveReceipt } from '../../state/services/receiptServices/saveReceipt';
+import { saveReceipt } from '../../state/services/receiptActions/saveReceipt';
 import { useLocation, useNavigate } from 'react-router-dom';
 import moment from 'moment';
 import { receiptType } from '../../state/slices/receiptSlice';
-import { updateProduct } from '../../state/services/productServices/updateProduct';
+import { updateProduct } from '../../state/services/productActions/updateProduct';
 
 interface CustomizedState {
     myState: string

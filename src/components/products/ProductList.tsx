@@ -2,10 +2,10 @@ import React, { useEffect } from 'react'
 import { Anchor, Button, Table } from '@mantine/core';
 import { useAppDispatch } from '../../state/store'
 import { useSelector } from 'react-redux';
-import { getAllProducts } from '../../state/services/productServices/getAllProducts';
+import { getAllProducts } from '../../state/services/productActions/getAllProducts';
 import { requestStatus, productType, selectProductsFetchError, selectProductsState, selectProductsStatus } from '../../state/slices/productSlice';
 import ProductForm from '../products/ProductForm';
-import { deleteProduct } from '../../state/services/productServices/deleteProduct';
+import { deleteProduct } from '../../state/services/productActions/deleteProduct';
 import { Link } from 'react-router-dom';
 import { addProduct} from '../../state/slices/shoppingCartSlice';
 

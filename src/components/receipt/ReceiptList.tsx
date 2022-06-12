@@ -2,7 +2,7 @@
 import { useEffect } from "react"
 import { useSelector } from "react-redux";
 import { Table } from "@mantine/core";
-import { getAllReceipts } from "../../state/services/receiptServices/getAllReceipts";
+import { getAllReceipts } from "../../state/services/receiptActions/getAllReceipts";
 import { receiptType, requestStatus, selectReceiptsFetchError, selectReceiptsState, selectReceiptsStatus } from "../../state/slices/receiptSlice";
 import { useAppDispatch } from "../../state/store";
 

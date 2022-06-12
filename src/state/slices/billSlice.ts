@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from '../../state/store'
 import {  requestStatus } from './providerSlice'
-import { getAllBills } from '../../state/services/billServices/getAllBills'
+import { getAllBills } from '../services/billActions/getAllBills'
 import { productType } from "./productSlice";
-import { saveBill } from "../services/billServices/saveBill";
+import { saveBill } from "../services/billActions/saveBill";
 
 
 type billType = {

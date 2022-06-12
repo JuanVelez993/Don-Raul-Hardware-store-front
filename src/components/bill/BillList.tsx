@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Table } from "@mantine/core";
 import { receiptType, requestStatus } from "../../state/slices/receiptSlice";
 import { useAppDispatch } from "../../state/store";
-import { getAllBills } from "../../state/services/billServices/getAllBills";
+import { getAllBills } from "../../state/services/billActions/getAllBills";
 import { billType, selectBillsFetchError, selectBillsState, selectBillsStatus } from "../../state/slices/billSlice";
 
 

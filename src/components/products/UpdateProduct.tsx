@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import '../../App.css'
 import { productType, selectProductsState } from '../../state/slices/productSlice';
 import { providerType} from '../../state/slices/providerSlice';
-import { updateProduct } from '../../state/services/productServices/updateProduct';
+import { updateProduct } from '../../state/services/productActions/updateProduct';
 import { useAppDispatch } from '../../state/store';
 import { useLocation, useNavigate } from "react-router-dom"
 

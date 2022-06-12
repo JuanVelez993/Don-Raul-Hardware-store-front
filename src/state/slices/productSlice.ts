@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from '../store'
-import { getAllProducts } from '../services/productServices/getAllProducts'
+import { getAllProducts } from '../services/productActions/getAllProducts'
 import { providerType } from "../slices/providerSlice";
-import { saveProduct } from '../services/productServices/saveProduct';
-import { deleteProduct } from "../services/productServices/deleteProduct";
-import { updateProduct } from "../services/productServices/updateProduct";
+import { saveProduct } from '../services/productActions/saveProduct';
+import { deleteProduct } from "../services/productActions/deleteProduct";
+import { updateProduct } from "../services/productActions/updateProduct";
 
 
 

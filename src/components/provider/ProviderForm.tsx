@@ -2,7 +2,7 @@ import { nanoid } from '@reduxjs/toolkit';
 import React, { useState } from 'react'
 import '../../App.css'
 import { providerType } from '../../state/slices/providerSlice';
-import { saveProvider } from '../../state/services/providerServices/saveProvider';
+import { saveProvider } from '../../state/services/providerActions/saveProvider';
 import { useAppDispatch } from '../../state/store';
 import { Button } from '@mantine/core';
 

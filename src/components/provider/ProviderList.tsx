@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import ProviderForm from './ProviderForm';
 import { useAppDispatch } from '../../state/store'
 import { requestStatus, providerType, selectProvidersFetchError, selectProvidersState, selectProvidersStatus } from '../../state/slices/providerSlice';
-import { getAllProviders } from '../../state/services/providerServices/getAllProviders';
+import { getAllProviders } from '../../state/services/providerActions/getAllProviders';
 import { useSelector } from 'react-redux';
 import { Table } from '@mantine/core';
 
