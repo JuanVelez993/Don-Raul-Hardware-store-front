@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { productType } from "./productSlice"
-export const ADD_PRODUCT='ADD_PRODUCT'
+import { shoppingCartType } from "./productSlice"
 
 
 interface shoppingStateType {
-    products: productType[],
+    products: shoppingCartType[],
+    //products: productType[],
     
 }
 
@@ -13,36 +13,25 @@ const initialState: shoppingStateType = {
     
 }
 
-
-export const addProduct= (product: productType) => (dispatch:any) =>{
-    
-      dispatch({
-        type:ADD_PRODUCT,
-        payload:{product:product}
-    })
-}
-export const shopping=(state= initialState,action:any)=>{
-    switch(action.type){
-        case ADD_PRODUCT:
-            
-            return {
-                ...state,
-                products:[
-                    ...state.products,
-                    action.payload.product]
-            }
-    }
-}
-
 const shoppingSlice = createSlice({
     name: 'shopping',
     initialState,
     reducers: {
-        addPost(state, action){
-            state.products.push(action.payload)
-        },
-        getShoppingCart(state){
-             state.products
+        addProduct(state, action){
+        
+            const existingProduct = state.products.find(actualProduct => actualProduct.product.id === action.payload.id)
+
+            if (existingProduct){
+                const updatedProduct = { quantity: (existingProduct.quantity + 1), product: existingProduct.product } 
+                state.products = state.products.filter(p => p.product.id !== existingProduct.product.id)   
+                state.products.push(updatedProduct)
+            }else{
+                const newProduct = {
+                    quantity: 1,
+                    product: action.payload
+                }    
+                state.products.push(newProduct)
+            }
         },
         clearShoppingCart(state){
             state.products =[]
@@ -51,4 +40,4 @@ const shoppingSlice = createSlice({
 
 
 export default shoppingSlice.reducer
-export const {addPost,getShoppingCart} = shoppingSlice.actions
+export const {addProduct,clearShoppingCart} = shoppingSlice.actions
